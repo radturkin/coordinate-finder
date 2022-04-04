@@ -5,4 +5,4 @@ flask app for finding coordinates for pixel placement in a rectangular grid
 
 pull repository and build using docker
 
---- docker build -t coord-app:1.0 . ---
+/// docker build -t coord-app:1.0 . ///
