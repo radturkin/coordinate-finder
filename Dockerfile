@@ -11,4 +11,4 @@ COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 
-CMD ["python","main.py"]
+CMD ["python","main.py","--host", "0.0.0.0"]
