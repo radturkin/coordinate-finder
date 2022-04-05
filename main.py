@@ -9,9 +9,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-x_values=[]
-y_values=[]
-corner_points=[]
+x_values = []
+y_values = []
+corner_points = []
 @app.route('/coordinates', methods=['POST'])
 def findcoords():
     #pull values from input form
@@ -23,18 +23,18 @@ def findcoords():
     for i,j in corner_points:
         x_values.append(i)
         y_values.append(j)
-    x=np.array(x_values)
-    y=np.array(y_values)
-    x=np.unique(x)
-    y=np.unique(y)
+    x = np.array(x_values)
+    y = np.array(y_values)
+    x = np.unique(x)
+    y = np.unique(y)
     #calculate and build coordinate pairs for pixel locations
-    xs=np.linspace(x[0],x[1],w)
-    ys=np.linspace(y[0],y[1],h)
+    xs = np.linspace(x[0],x[1],w)
+    ys = np.linspace(y[0],y[1],h)
     Xs,Ys = np.meshgrid(xs,ys)
     xy = np.vstack((Xs.flatten(), Ys.flatten())).T
     #tidy up coordinates to appropriate 2 dimensional array
-    xys=np.reshape(xy, (h,w,2))
-    coordinates=np.flip(xys,0)
+    xys = np.reshape(xy, (h,w,2))
+    coordinates = np.flip(xys,0)
 
     return render_template("coordinates.html", coordinates=coordinates)
 
