@@ -37,3 +37,9 @@ the order of the four coordinate pairs is not important
 example: (3,2),(3,5),(1,2),(1,5)
 
 press submit
+
+# future versions
+this project is a rough draft and the first working version while calcultations it outputs are correct it has much room for improvement, such future changes to make include
+-formatting / beautifying layout / adjusting sizes of input boxes
+-adding two dimensional image of a grid with marked coordinate pairs mapped over it on coordinates.html template
+-adding tests to main.py
