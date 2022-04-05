@@ -27,12 +27,19 @@ def findcoords():
     y = np.array(y_values)
     x = np.unique(x)
     y = np.unique(y)
+    
     #calculate and build coordinate pairs for pixel locations
+    #xs, calculating all x values for coordinates
     xs = np.linspace(x[0],x[1],w)
+    
+    #ys, calculating all y values for coordinates
     ys = np.linspace(y[0],y[1],h)
+    
+    #combine xs, and ys into coordinate pairs
     Xs,Ys = np.meshgrid(xs,ys)
     xy = np.vstack((Xs.flatten(), Ys.flatten())).T
-    #tidy up coordinates to appropriate 2 dimensional array
+    
+    #tidy up coordinate pairs to appropriate 2 dimensional array
     xys = np.reshape(xy, (h,w,2))
     coordinates = np.flip(xys,0)
 
