@@ -35,5 +35,4 @@ def findcoords():
     return render_template("coordinates.html", coordinates=coordinates)
 
 if __name__ == "__main__":
-    app.run(debug=True)
     app.run(debug=True, host='0.0.0.0')
