@@ -14,10 +14,12 @@ y_values=[]
 corner_points=[]
 @app.route('/coordinates', methods=['POST'])
 def findcoords():
+    #pull values from input form
     h = int(request.form['height'])
     w = int(request.form['width'])
     corner_points = list(eval(request.form['corner_points']))
-
+    
+    #organize rectangle corner points
     for i,j in corner_points:
         x_values.append(i)
         y_values.append(j)
@@ -25,10 +27,12 @@ def findcoords():
     y=np.array(y_values)
     x=np.unique(x)
     y=np.unique(y)
+    #calculate and build coordinate pairs for pixel locations
     xs=np.linspace(x[0],x[1],w)
     ys=np.linspace(y[0],y[1],h)
     Xs,Ys = np.meshgrid(xs,ys)
     xy = np.vstack((Xs.flatten(), Ys.flatten())).T
+    #tidy up coordinates to appropriate 2 dimensional array
     xys=np.reshape(xy, (h,w,2))
     coordinates=np.flip(xys,0)
 
