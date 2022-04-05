@@ -5,9 +5,9 @@ flask app for finding coordinates for pixel placement in a two dimensional recta
 
 pull repository and build using docker
 
-to build docker and name it rads_flask app:
+to build docker and name it rads-flask-app:
 
-``` docker build -t rads_flask_app . ```
+``` docker build -t rads-flask-app . ```
 
 to build docker and name it something else:
 
@@ -21,6 +21,13 @@ or using the imageID:
 ``` docker run <imageID> ```
 
 a link should appear in your terminal open link in web browser
+
+#troubleshooting
+
+if you are not able to run the flask app due to port issues try 
+
+```docker run -p 5000:5000 -d <name or imageID>```
+
 
 # interacting with app in browser
 use numerical values for height and width of image
