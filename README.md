@@ -1,9 +1,32 @@
 # coordinate-finder
-flask app for finding coordinates for pixel placement in a rectangular grid
+flask app for finding coordinates for pixel placement in a two dimensional rectangular grid
 
 # To Run App
 
 pull repository and build using docker
 
-``` docker build -t coord-app:1.0 . ```
-#comments for me: add more instructions and things they need.
+to build docker and name it rads_flask app:
+
+``` docker build -t rads_flask_app . ```
+
+to build docker and name it something else:
+
+``` docker build -t something_else . ```
+
+once docker successfully builds you can run the app using either the name you assigned the image:
+
+``` docker run <name of image> ```
+
+or using the imageID:
+``` docker run <imageID> ```
+
+a link should appear in your terminal open link in web browser
+
+# interacting with app in browser
+use numerical values for height and width of image
+and type in the coordinate pairs for the corners of rectangle in standard coordinate format, seperating each by a comma, 
+the order of the four coordinate pairs is not important
+
+example: (3,2),(3,5),(1,2),(1,5)
+
+press submit
