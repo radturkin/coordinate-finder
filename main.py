@@ -12,16 +12,12 @@ def home():
 x_values=[]
 y_values=[]
 corner_points=[]
-
 @app.route('/coordinates', methods=['POST'])
 def findcoords():
-
-    #take in values from form
     h = int(request.form['height'])
     w = int(request.form['width'])
     corner_points = list(eval(request.form['corner_points']))
-    
-    #rearrange/tidyup corner points 
+
     for i,j in corner_points:
         x_values.append(i)
         y_values.append(j)
@@ -29,8 +25,6 @@ def findcoords():
     y=np.array(y_values)
     x=np.unique(x)
     y=np.unique(y)
-    
-    #calculate and organize all coordinate pairs for pixel placement
     xs=np.linspace(x[0],x[1],w)
     ys=np.linspace(y[0],y[1],h)
     Xs,Ys = np.meshgrid(xs,ys)
@@ -40,7 +34,5 @@ def findcoords():
 
     return render_template("coordinates.html", coordinates=coordinates)
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-    app.run(debug=True, host='0.0.0.0')
