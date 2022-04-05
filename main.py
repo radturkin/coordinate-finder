@@ -9,13 +9,13 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+x_values=[]
+y_values=[]
+corner_points=[]
+
 @app.route('/coordinates', methods=['POST'])
 def findcoords():
-    
-    x_values=[]
-    y_values=[]
-    corner_points=[]
-    
+
     #take in values from form
     h = int(request.form['height'])
     w = int(request.form['width'])
