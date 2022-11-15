@@ -22,7 +22,7 @@ or using the imageID:
 
 a link should appear in your terminal open link in web browser
 
-#troubleshooting
+# troubleshooting
 
 if you are not able to run the flask app due to port issues try 
 
